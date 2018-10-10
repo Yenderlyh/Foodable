@@ -1,9 +1,9 @@
 # Foodable
 
+
 ##Description
 
  Foodable is an app where the user can search recipes that matches the selected ingredients.
-
 
 ## User Stories
 - 404 - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
@@ -21,8 +21,8 @@
 
 - recipes list - As a user i want to see all the recipes available so that i can choose one.
 
-#Backlog
 
+#Backlog
 - create recipe
 - add recipe to favorites
 - food categories
