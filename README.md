@@ -1,7 +1,7 @@
 # Foodable
- 
- 
-###Description
+
+##Description
+
  Foodable is an app where the user can search recipes that matches the selected ingredients.
 
 
@@ -21,20 +21,13 @@
 
 - recipes list - As a user i want to see all the recipes available so that i can choose one.
 
-##Backlog
+#Backlog
 
 - create recipe
 - add recipe to favorites
 - food categories
 
 ## Routes
-
-GET / 
-
-POST /auth/signup - POST Body: username, email, password, diet
-GET /auth/login
-POST /auth/login - POST Body: email, password
-POST /auth/logout - POST Body: nothing
 
 ## Services
 
