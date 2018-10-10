@@ -6,7 +6,11 @@
 
 
 ## MVP (DOM - CANVAS)
-MVP definition, deliverables.
+- ingredients filter
+- sign up && login
+- connect to the api 
+- seed file  with ingredients
+- seed file  with recipes
 
 
 ## Backlog
@@ -32,16 +36,32 @@ MVP definition, deliverables.
 
 
 ## Routes
+GET /
+GET /auth/signup
+POST /auth/signup 
+GET /auth/login
+POST /auth/login 
+POST /auth/logout 
+
+GET /homepage
+
+GET /recipes-list
+GET /recipe/:id
 
 ## Services
 
 ## Pages
+/signup
+/login
+/homepage
+/recipes-list
+/recipe/:id
 
 ## Components
 
 ## Guards
 - if logged in cannot access login or sign up
-- if not logged in cannot access to favorites page
+- if not logged in cannot access to profile page
 ## Models
 ```
 User model 
