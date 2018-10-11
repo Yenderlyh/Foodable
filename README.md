@@ -37,7 +37,7 @@
 
 - search - As a user I want to search recipes that matches the ingredientes i have.
 
-- recipes list - As a user i want to see all the recipes available so that i can choose one.
+- recipes detail - As a user i want to see the details of a recipe so that i know how to cook it.
 
 # CLIENT
 
@@ -46,23 +46,8 @@
 - / - Homepage (public)
 - /signup - Signup form (anon)
 - /login - Login form (anon)
-- /logout - Logout (user)
 - /recipes - Search input, random recipes (user)
-- /recipes/search-results?query (user)
 - /recipe/:id - Recipe detail (user)
-
-
-# SERVER
-
-## Routes
-GET /auth/me
-POST /auth/signup 
-POST /auth/login 
-POST /auth/logout 
-
-GET /recipes
-GET /recipes/search-results
-GET /recipe/:id
 
 ## Services
 Auth
@@ -74,9 +59,12 @@ Auth
 
 Recipes
   - getOne
-  - getAll
   - getRandom
-  - getSearch
+  - getSearch(ingredients)
+
+Ingredient
+- getSearch(ingredientName) // e.g.: "avo"
+
 
 ## Pages
   - signup (anon)
@@ -92,23 +80,43 @@ Recipes
 - Require-user: if not logged in cannot access the page
 - Require-anon: if an anon user i can only access the page
 
-## Models
-```
-User model 
 
+
+# SERVER
+
+## Routes
+GET /auth/me
+POST /auth/signup 
+POST /auth/login 
+POST /auth/logout 
+
+GET /recipes/random
+GET /recipes/search?ingredients=1234567890,234567890,234567890,234567890
+GET /recipe/:id
+
+GET /ingredients/search?name=avo
+
+## Models
+
+### User model 
+
+```
 Username: String // required
 Password: String// required
+```
 
-Ingredients model 
+### Ingredients model 
+```
 name: String
-picture: String
+```
 
-Recipes model
+### Recipes model
+```
 name: String
 picture: string
 cookingTime: number
-ingredients: Array
-Preparation: any
+ingredients: [{type: ObjectId, ref: 'Ingredient'}]
+Preparation: String
 
 ```
 
