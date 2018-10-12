@@ -1,0 +1,55 @@
+form {
+
+  &.is-processing {
+      opacity: 0.5;
+  }
+
+  .field {
+    margin-bottom: 20px;
+    .error-container{
+      height: 22px;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-style: bold;
+  }
+
+  input {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .submit {
+    padding-top: 20px;
+  }
+
+  .submit button {
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #d00000;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 5px 30px lightgray;
+    width: 30%;    
+  }
+  button{
+    border-radius: 30px;
+  }
+
+  .field.has-error label {
+    color: #d00000;
+  }
+
+  .validation {
+    margin: 5px 0 10px;
+    color: #d00000;
+  }
+
+  .field.has-error input {
+    border: 1px solid  #d00000;
+  }
+} 

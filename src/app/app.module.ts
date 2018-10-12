@@ -10,12 +10,15 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { RecipeIdComponent } from './pages/recipe-id/recipe-id.component';
 
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
   { path: 'login', component: LoginPageComponent},
   { path: 'signup', component: SignUpPageComponent},
+  { path: 'recipe', component: RecipeIdComponent},
   { path: '**',  component: NotFoundPageComponent }
 ];
 
@@ -26,6 +29,8 @@ const routes: Routes = [
     HomePageComponent,
     LoginPageComponent,
     SignUpPageComponent,
+    RecipeDetailComponent,
+    RecipeIdComponent,
   ],
   imports: [
     BrowserModule,

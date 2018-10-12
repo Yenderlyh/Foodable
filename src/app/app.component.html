@@ -1,12 +1,12 @@
 <header id="site-header">
+  <h2>Foodable</h2>
   <div class="container">
-
+      <a (click)="logout()">logout</a>
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="loading">
       </div>
       <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/profile']">{{user.username}}</a>
-        <a (click)="logout()">logout</a>
+        <a [routerLink]="['/']">{{user.username}}</a>
       </div>
       <div *ngIf="!loading && anon">
         <a [routerLink]="['/login']">login</a>
@@ -17,9 +17,7 @@
   </div>
 </header>
 
-<main id="site-main">
+<main id="site-main container">
 <router-outlet>
-  <a (click)="logout()">logout</a>
-
 </router-outlet>
 </main>
