@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 
-import { environment } from '../../environments/environment';
-
-const apiUrl = `${environment.apiUrl}+/services`;
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
   private recipes: any;
-  private baseUrl = `${environment.apiUrl}+/services`;
+  private baseUrl = 'http://localhost:3000/recipes';
 
 
-  private API_URL = `${environment.apiUrl}+/recipes`;
 
   constructor(private httpClient: HttpClient) { }
   

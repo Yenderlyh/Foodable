@@ -6,7 +6,7 @@
       <div *ngIf="loading">
       </div>
       <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/']">{{user.username}}</a>
+        <a [routerLink]="['/']">Homepage</a>
       </div>
       <div *ngIf="!loading && anon">
         <a [routerLink]="['/login']">login</a>

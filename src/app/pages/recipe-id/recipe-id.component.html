@@ -1,3 +1,6 @@
-<p>
-  recipe-id works!
-</p>
+<section *ngIf="recipes">
+  <img src="{{recipes.picture}}" alt="">
+  <h2>{{recipes.title}}</h2>
+  <p>{{recipes.cookingTime}}</p>
+  <p>{{recipes.preparation}}</p>
+</section>

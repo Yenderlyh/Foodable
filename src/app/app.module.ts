@@ -12,13 +12,16 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { RecipeIdComponent } from './pages/recipe-id/recipe-id.component';
+import { InitAuthGuard } from './guards/init-auth.guard';
+import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireUserGuard } from './guards/require-user.guard';
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent},
-  { path: 'login', component: LoginPageComponent},
-  { path: 'signup', component: SignUpPageComponent},
-  { path: 'recipe', component: RecipeIdComponent},
+  { path: '', component: HomePageComponent, canActivate: [ InitAuthGuard ] },
+  { path: 'login', component: LoginPageComponent, canActivate: [ RequireAnonGuard ]},
+  { path: 'signup', component: SignUpPageComponent, canActivate: [ RequireAnonGuard ]},
+  { path: 'recipe/:id', component: RecipeIdComponent, canActivate: [RequireUserGuard]},
   { path: '**',  component: NotFoundPageComponent }
 ];
 
