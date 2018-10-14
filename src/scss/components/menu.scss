@@ -1,0 +1,40 @@
+/* Hamburger Menu */
+.toggle-mobile{
+  position: absolute;
+  display: block;
+  top: 40px; 
+  right: 5px;
+  width: 50px;
+  height: 50px;
+}
+.btns-container {
+  position: absolute;
+  right: -5px;
+  top: 45px;
+  background-color: red;
+}
+/* Menu Links */
+.toggle-mobile .btns-container{
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  visibility: hidden;
+}
+
+.toggle-mobile:hover .btns-container{
+  visibility: visible;
+}
+
+
+.toggle-mobile .btns-container .btn{
+  position: relative;
+  display: block;
+  width: 100%;
+  color: black;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+}
+.toggle-mobile .btns-container .btn:hover{
+  color:#DB0000;
+}

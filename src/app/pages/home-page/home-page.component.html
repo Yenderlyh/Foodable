@@ -2,16 +2,26 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
 </head>
-<form #form="ngForm">
-  <div class="search-field">
-    <input [(ngModel)]="searchTerm" type="text" name="searchBox" id="search" placeholder="What's in your fridge?">
-    <button class="fas fa-search">
 
-    </button>
-  </div>
-</form>
-<ul id= "searchTextResults" class="cards" *ngIf="recipes">
-  <li *ngFor="let recipe of recipes">
-    <app-recipe-detail [recipe]="recipe"></app-recipe-detail>
-  </li>
-</ul>
+<body>
+  <header>
+  </header>
+  <main>
+    <img src="https://i.blogs.es/36938e/istock-840527124/450_1000.jpg" alt="">
+    <form #form="ngForm">
+      <div class="search-field">
+        <input [(ngModel)]="searchTerm" type="text" name="searchBox" id="search" placeholder="What's in your fridge?">
+        <button class="fas fa-search">
+
+        </button>
+      </div>
+      <p></p>
+    </form>
+    <ul id="searchTextResults" class="cards" *ngIf="recipes">
+      <li *ngFor="let recipe of recipes">
+        <app-recipe-detail [recipe]="recipe"></app-recipe-detail>
+      </li>
+    </ul>
+
+  </main>
+</body>

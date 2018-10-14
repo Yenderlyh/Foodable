@@ -33,19 +33,19 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.recipesService.getAll()
     .then((results) => {
-      // function shuffle(results) {
-      //   results.filter((result) => {
-      //     result.title === 'comida'
-      //   });
-      //   // for (let i = results.length - 1; i > 0; i--) {
-      //   //   // const j = Math.floor(Math.random() * (i + 1));
-      //   //   //   [results[i], results[j]] = [results[j], results[i]];
+      function shuffle(results) {
+        results.filter((result) => {
+          result.title === 'comida'
+        });
+        for (let i = results.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+            [results[i], results[j]] = [results[j], results[i]];
 
-      //   // }
-      //   // return results;
-      // }
-      // console.log(results)
-      // this.recipes = shuffle(results)
+        }
+        return results;
+      }
+      console.log(results)
+      this.recipes = shuffle(results)
       return this.recipes = results
     })
   }

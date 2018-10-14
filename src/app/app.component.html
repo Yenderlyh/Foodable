@@ -1,23 +1,23 @@
-<header id="site-header">
-  <h2>Foodable</h2>
-  <div class="container">
-      <a (click)="logout()">logout</a>
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <div *ngIf="loading">
-      </div>
-      <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/']">Homepage</a>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a [routerLink]="['/login']">login</a>
-        <a [routerLink]="['/signup']">signup</a>
+<body>
+  <header id="site-header">
+    <a [routerLink]="['/']"><h2>Foodable</h2></a>
+    <div *ngIf="user">
+      <span><app-menu></app-menu></span>
+    </div>
+    <div class="container">
+      <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+        <div *ngIf="loading">
+        </div>
+        <div *ngIf="!loading && !!user">
+        </div>
+        <div *ngIf="!loading && anon">
+        </div>
       </div>
     </div>
-
-  </div>
-</header>
-
-<main id="site-main container">
-<router-outlet>
-</router-outlet>
-</main>
+  </header>
+  
+  <main id="site-main container">
+  <router-outlet>
+  </router-outlet>
+  </main>
+</body>

@@ -15,6 +15,9 @@ import { RecipeIdComponent } from './pages/recipe-id/recipe-id.component';
 import { InitAuthGuard } from './guards/init-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SliderIntroComponent } from './components/slider-intro/slider-intro.component';
 
 
 const routes: Routes = [
@@ -22,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [ RequireAnonGuard ]},
   { path: 'signup', component: SignUpPageComponent, canActivate: [ RequireAnonGuard ]},
   { path: 'recipe/:id', component: RecipeIdComponent, canActivate: [RequireUserGuard]},
+  { path: 'profile', component: ProfilePageComponent, canActivate: [RequireUserGuard]},
   { path: '**',  component: NotFoundPageComponent }
 ];
 
@@ -34,6 +38,9 @@ const routes: Routes = [
     SignUpPageComponent,
     RecipeDetailComponent,
     RecipeIdComponent,
+    ProfilePageComponent,
+    MenuComponent,
+    SliderIntroComponent,
   ],
   imports: [
     BrowserModule,
