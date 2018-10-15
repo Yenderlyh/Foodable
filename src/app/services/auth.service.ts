@@ -39,7 +39,7 @@ export class AuthService {
         }
       });
   }
-
+ 
   login(user: any): any {
     const options = {
       withCredentials: true
@@ -69,5 +69,9 @@ export class AuthService {
 
   getUser(): any {
     return this.user;
+  }
+  getFavoriteRecipes() {
+    return this.user.favorites;
+
   }
 }

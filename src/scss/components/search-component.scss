@@ -9,7 +9,7 @@
 .search-field{
   position: relative;
   width: 100%;
-
+  top: -20px;
   button{
       
     position:absolute;
@@ -21,4 +21,5 @@
 }
 ul#searchTextResults.cards{
   padding: 0px;
+  margin-top: 50px;
 }
