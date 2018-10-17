@@ -12,8 +12,10 @@ import { ActivatedRoute } from "@angular/router";
 export class RecipeIdComponent implements OnInit {
 
   recipes: any;
-  id : string;
+  id: string;
   error = false;
+  isIngredients = true;
+  isSteps = false;
 
 
   constructor(
@@ -23,30 +25,26 @@ export class RecipeIdComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-    .subscribe((params) => {
-      this.id = params.id;
-      this.recipesService.getOne(this.id)
-        .then((result) => {
-          this.recipes = result;
-        })
-        .catch((error) => {
-          console.log(error);
-          this.error = true;
-        })
-    })
-}}
+      .subscribe((params) => {
+        this.id = params.id;
+        this.recipesService.getOne(this.id)
+          .then((result) => {
+            this.recipes = result;
+          })
+          .catch((error) => {
+            console.log(error);
+            this.error = true;
+          })
+      })
+  }
+  handleIngredientsClick() {
+    this.isIngredients = true;
+    this.isSteps = false;
+  }
 
-//     this.route.params
-//     .subscribe((params) => {
-//       this.id = params.id;
-//       this.recipesService.getOne(this.id)
-//         .then((result) => {
-//           this.recipes = result;
-//       // this.recipesService.getOne(this.id)
-//       //   .then((result) => {
-//       //     console.log(result)
-//       //     this.recipes = result
-//       //   })
-//   }
-  
-// }
+  handleStepsClick() {
+    this.isSteps = true;
+    this.isIngredients = false;
+  }
+}
+

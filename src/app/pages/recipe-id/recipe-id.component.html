@@ -1,6 +1,17 @@
-<section *ngIf="recipes">
-  <img src="{{recipes.picture}}" alt="">
-  <h2>{{recipes.title}}</h2>
-  <p>{{recipes.cookingTime}}</p>
-  <p>{{recipes.preparation}}</p>
+<section>
+  <div *ngIf="recipes" class="top-page">
+    <img src="{{recipes.picture}}" alt="">
+    <h1>{{recipes.title}}</h1>
+  </div>
+  <div class="ingredients">
+    <a class="link" (click)="handleIngredientsClick()" [ngClass]="{'active': isIngredients}" tabindex="0">Ingredients</a>
+    <p>|</p>
+    <a class="link" (click)="handleStepsClick()" [ngClass]="{'active': isSteps}" tabindex="0">Steps</a>
+  </div>
+    <div *ngIf="isIngredients">
+      <app-ingredients (switch)="handleIngredientsClick($event)"></app-ingredients>
+    </div>
+    <div *ngIf="isSteps">
+      <app-steps (switch)="handleStepsClick($event)"></app-steps>
+    </div>
 </section>

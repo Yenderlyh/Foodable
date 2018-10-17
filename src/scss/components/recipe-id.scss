@@ -1,0 +1,36 @@
+.top-page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 25px 15px;
+
+
+  
+  img{
+    border-radius: 50%;
+    width: 100%;
+  }
+}
+
+.ingredients{
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  align-items: center;
+  justify-items: center;
+  margin: 25px 15px;
+}
+.steps{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.step-index{
+  background-color: #D00000;
+  padding: 10px;
+  border-radius: 40px;
+  margin-bottom: 10px;
+  color: white;
+}
+.step{
+  margin: 40px;
+}
