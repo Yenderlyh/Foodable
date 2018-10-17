@@ -14,18 +14,6 @@ export class HomePageComponent implements OnInit {
   recipes: any;
   filteredRecipes: any;
 
-  // private _searchTerm: string;
-  // get searchTerm(): string {
-  //   return this.searchTerm
-  // }
-  // set searchTerm(value: string) {
-  //   this._searchTerm= value;
-  //   this.filteredRecipes = this.filterRecipes(value);
-  // }
-  // filterRecipes (searchString: string){
-  //   return this.recipes.filter(recipes => recipes.ingredients.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
-  // }
-
   constructor(
     private recipesService: RecipesService,
   ) { }

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',

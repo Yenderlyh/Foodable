@@ -25,6 +25,7 @@ export class RecipesService {
     return this.httpClient.get(`${this.baseUrl}`, options)
       .toPromise();
   }
+
   getOne(id: string): Promise<any> {
     const options = {
       withCredentials: true
@@ -32,11 +33,17 @@ export class RecipesService {
     return this.httpClient.get(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
-  getList(searchString: string) : Promise<any> {
+
+  search(ingredients: Array<any>) : Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/search?ingredient=${searchString}`, options)
-    .toPromise();  }
+    ingredients = ingredients.map((ingredient)=>{
+        return ingredient.name.toLowerCase();
+    });
+    const ingredientsString = ingredients.join()
+    return this.httpClient.get(`${this.baseUrl}/search?ingredients=${ingredientsString}`, options)
+    .toPromise();
+  }
 
 }

@@ -15,11 +15,15 @@ form {
     display: block;
     margin-bottom: 10px;
     font-style: bold;
+    border: none;
+    
   }
 
-  input {
-    padding: 5px;
+  input, :placeholder-shown {
+    padding: 10px 20px;
     font-size: 16px;
+    
+    
   }
 
   .submit {

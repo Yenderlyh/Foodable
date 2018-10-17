@@ -1,7 +1,26 @@
- <form #form="ngForm">
-      <div class="search-field">
-        <input  [formControl]="queryField"  type="text" name="searchBox" id="search" placeholder="What's in your fridge?">
-        <button class="fas fa-search">
-        </button>
-      </div>
-    </form>
+<div id="search">
+  <form #form="ngForm">
+    <div class="search-field">
+      <input [(ngModel)]="terms" (ngModelChange)="updateIng()"[formControl]="queryField" type="text" name="searchBox" id="search" placeholder="What's in your fridge?">
+      <button class="fas fa-search" (click)="updateRecipes()"></button>
+    </div>
+  </form>
+</div>
+<ul>
+<li *ngFor="let ingredient of filteredIng" [value]="ingredients">
+    <a class="ingredients" (click)="addToSelection(ingredient)">{{ingredient.name}}</a>
+  </li>
+</ul>
+Selected Ing
+<ul>
+  <li *ngFor="let ingredient of selectedIng" [value]="ingredient">
+    {{ingredient.name}}
+  </li>
+</ul>
+Matching Recipes
+
+<ul>
+  <li *ngFor="let recipe of recipes" [value]="recipe">
+    {{recipe.title}}
+  </li>
+</ul>

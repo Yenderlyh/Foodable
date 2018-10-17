@@ -8,11 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  
+  title = 'app';
+  loading = true;
+  anon: boolean;
+  user: any;
 
   constructor(private authService: AuthService,
               private router: Router) { }
 
   ngOnInit() {
+    this.authService.userChange$.subscribe((user) => {
+      this.loading = false;
+      this.user = user;
+      this.anon = !user;
+    });
   }
   logout() {
     this.authService.logout()
