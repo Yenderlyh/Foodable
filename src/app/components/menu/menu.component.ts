@@ -24,9 +24,5 @@ export class MenuComponent implements OnInit {
       this.anon = !user;
     });
   }
-  logout() {
-    this.authService.logout()
-      .then(() => this.router.navigate(['/login']));
-  }
-
+ 
 }

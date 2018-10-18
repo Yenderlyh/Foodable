@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 
@@ -7,22 +8,18 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RecipesService {
-  private baseUrl = 'http://localhost:3000/recipes';
+  private API_URL = environment.apiUrl + '/recipes';
 
 
   constructor(private httpClient: HttpClient,
    ) { }
 
-//   search(queryString: string) {
-//     let _URL = this.baseUrl + queryString;
-//     return this.httpClient.get(_URL);
-// }
   
   getAll(): Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}`, options)
+    return this.httpClient.get(`${this.API_URL}`, options)
       .toPromise();
   }
 
@@ -30,7 +27,7 @@ export class RecipesService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
+    return this.httpClient.get(`${this.API_URL}/${id}`, options)
       .toPromise();
   }
 
@@ -42,7 +39,7 @@ export class RecipesService {
         return ingredient.name.toLowerCase();
     });
     const ingredientsString = ingredients.join()
-    return this.httpClient.get(`${this.baseUrl}/search?ingredients=${ingredientsString}`, options)
+    return this.httpClient.get(`${this.API_URL}/search?ingredients=${ingredientsString}`, options)
     .toPromise();
   }
 

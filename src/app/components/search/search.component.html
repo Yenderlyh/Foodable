@@ -20,16 +20,9 @@
     <div class="selected">
       <button (click)="removeFromSelection()">x</button>
       <p> {{ingredient.name}} </p>
-      <!-- <div *ngIf="ingredient && ingredient.category == = 'vegetables'"><a href="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/cherry-bruschettas.jpg"></a></div> -->
     </div>
   </li>
 </ul>
-
-<div *ngFor="let category of selectedIng.category">
-  <div *ngIf="vegetables">
-    <div [ngClass]="'one'">Even Number</div>
-  </div>
-</div>
 <h3 class="title"> Matching Recipes</h3>
 <div class="card">
   <ul class="cards">
