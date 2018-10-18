@@ -54,10 +54,12 @@ export class SearchComponent implements OnInit {
   }
 
   updateIng() {
-    // this.terms = 'terms';
     this.filteredIng = this.allIngredients.filter(ingredient => {
-      return ingredient.name === this.terms
-    })
+      const name = ingredient.name && ingredient.name.toLowerCase();
+      const terms = this.terms && this.terms.toLowerCase();
+      return terms && name && name.indexOf(terms) !== -1;
+    });
+    this.filteredIng = this.filteredIng.splice(0, 5);
   }
   removeFromSelection() {
     this.selectedIng.splice(this.selectedIng.indexOf(this.selectedIng))

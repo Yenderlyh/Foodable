@@ -5,7 +5,7 @@
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
       <label>Username</label>
-      <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="3"
+      <input autocomplete="off" type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="3"
         [disabled]="processing" />
       <div class="error-container">
         <ng-container *ngIf="feedbackEnabled && usernameField.errors">
@@ -17,7 +17,7 @@
 
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
       <label>Password</label>
-      <input class="" type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required
+      <input autocomplete="off" class="" type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required
         minlength="3" [disabled]="processing" />
       <div class="error-container">
         <ng-container *ngIf="feedbackEnabled && passwordField.errors">
