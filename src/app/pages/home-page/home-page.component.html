@@ -8,6 +8,8 @@
     <app-slider-home-page></app-slider-home-page>
     <app-search></app-search>
 
+    <h3 class="title">All Recipes</h3>
+
     <ul id="searchTextResults" class="cards" *ngIf="recipes">
       <li *ngFor="let recipe of recipes">
         <app-recipe-detail [recipe]="recipe"></app-recipe-detail>
