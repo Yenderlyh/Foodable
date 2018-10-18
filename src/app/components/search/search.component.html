@@ -10,7 +10,7 @@
 <div class="search-container">
   <ul>
     <li *ngFor="let ingredient of filteredIng" [value]="ingredients">
-      <a class="ingredients" (click)="addToSelection(ingredient)">{{ingredient.name}}</a>
+      <a class="ingredients" (click)="addToSelection(ingredient)"><p>{{ingredient.name}}</p></a>
     </li>
   </ul>
 </div>

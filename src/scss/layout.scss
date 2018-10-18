@@ -6,8 +6,11 @@
   img{
     width: 18%;
   }
-  i{
-    font-size: 25px;
+  a.btn i{
+    font-size: 22px;
+    position: absolute;
+    right: 5px;
+    top: 22px;
   }
   .logout {
     text-align: right;
