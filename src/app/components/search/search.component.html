@@ -27,8 +27,8 @@
 <div class="card">
   <ul class="cards">
     <li *ngFor="let recipe of recipes" [value]="recipe">
+        <a [routerLink]="['/recipe',recipe._id]"> <img src="{{recipe.picture}}" alt=""></a>
       <h3>{{recipe.title}}</h3>
-      <a [routerLink]="['/recipe',recipe._id]"> <img src="{{recipe.picture}}" alt=""></a>
     </li>
   </ul>
 </div>
