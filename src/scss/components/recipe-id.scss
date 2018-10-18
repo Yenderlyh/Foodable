@@ -37,14 +37,14 @@
 }
 .step-index{
   background-color: #D00000;
-  padding: 20px;
-  border-radius: 50%;
+  border-radius: 20%;
   margin-bottom: 10px;
   color: white;
   height: 30px;
   width: 30px;
   font-weight: bolder;
-
+  text-align: center;
+  line-height: 30px;
 }
 .step{
   margin-right: 40px;
@@ -58,6 +58,7 @@
   p{
     padding: 20px;
     font-weight: bold;
+    text-align: center;
   }
 }
 .ingredients-list{
@@ -65,4 +66,8 @@
   li{
     list-style: none;
   }
+}
+
+ul{
+  padding: 0;
 }

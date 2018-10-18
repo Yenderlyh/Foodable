@@ -10,7 +10,9 @@
   align-items: center;
   position: relative;
 
-
+  ul{
+    padding-left: 0;
+  }
   li{
     position: relative;
     height: 150px;
@@ -35,9 +37,10 @@
     font-size: 15px;
    
 }
-a{
+a {
   color: #fff;
   text-decoration: none;
+  
 }
 h3 {
   width: 100%;

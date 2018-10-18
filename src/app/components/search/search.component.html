@@ -18,13 +18,15 @@
 <ul>
   <li class="selected-list" *ngFor="let ingredient of selectedIng" [value]="ingredient">
     <div class="selected">
-      <button (click)="removeFromSelection()"><i class="far fa-times-circle"></i></button>
-      <p> {{ingredient.name}} </p>
+      <div>
+        <button (click)="removeFromSelection()"><i class="far fa-times-circle"></i></button>
+        <p> {{ingredient.name}} </p>
+      </div>
     </div>
   </li>
 </ul>
 <h3 class="title"> Matching Recipes</h3>
-<div class="card">
+<div>
   <ul class="cards">
     <li *ngFor="let recipe of recipes" [value]="recipe">
         <a [routerLink]="['/recipe',recipe._id]"> <img src="{{recipe.picture}}" alt=""></a>
