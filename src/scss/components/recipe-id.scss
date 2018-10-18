@@ -13,14 +13,15 @@
     width: 100%;
   }
 }
-
-.ingredients{
+.shuffle{
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   align-items: center;
   justify-items: center;
-  margin: 25px 15px;
+}
+.ingredients{
   font-size: 22px;
+  text-align: center;
 }
 .steps{
     display: grid;

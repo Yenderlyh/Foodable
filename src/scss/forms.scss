@@ -19,12 +19,7 @@ form {
     
   }
 
-  input, :placeholder-shown {
-    padding: 10px 20px;
-    font-size: 16px;
-    
-    
-  }
+
 
   .submit {
     padding-top: 20px;
@@ -55,5 +50,20 @@ form {
 
   .field.has-error input {
     border: 1px solid  #d00000;
+  }
+  .search-field{
+    position: relative;
+    width: 100%;
+    top: -34px;
+    
+    #search{
+      font-size: 20px;
+    }
+   
+  }
+  input{
+    background-color: #f3d2d2e3;
+    border-radius: 30px;
+    padding: 15px;
   }
 } 

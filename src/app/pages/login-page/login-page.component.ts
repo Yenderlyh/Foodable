@@ -13,8 +13,8 @@ export class LoginPageComponent implements OnInit {
   feedbackEnabled = false;
   error = null;
   processing = false;
-  username: string;
-  password: string;
+  username= 'username';
+  password= 'password';
   
   constructor(
     private authService: AuthService,

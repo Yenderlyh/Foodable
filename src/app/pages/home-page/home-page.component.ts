@@ -33,7 +33,6 @@ export class HomePageComponent implements OnInit {
           }
           return results;
         }
-        console.log(results)
         this.recipes = shuffle(results)
         return this.recipes = results
       })

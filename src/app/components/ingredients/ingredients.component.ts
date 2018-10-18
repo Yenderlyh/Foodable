@@ -29,7 +29,6 @@ export class IngredientsComponent implements OnInit {
             this.recipes = result;
           })
           .catch((error) => {
-            console.log(error);
             this.error = true;
           })
       })

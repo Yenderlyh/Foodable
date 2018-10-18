@@ -25,7 +25,6 @@ export class StepsComponent implements OnInit {
             this.recipes = result;
           })
           .catch((error) => {
-            console.log(error);
             this.error = true;
           })
       })

@@ -4,18 +4,14 @@
   width: 100%;
   height: 50px;
   position: absolute;
+  top:-27px;
 
 }
-.search-field{
-  position: relative;
-  width: 100%;
-  top: -34px;
-  
-}
+
 .search-container{
   background-color: rgba($color: #D00000, $alpha: 0.26);
-  position: relative;
-  top: -26px;
+  position:relative;
+  top: -13px;
   margin: 0 auto;
   li{
     list-style: none;
@@ -23,6 +19,7 @@
   a{
     padding: 20px;
     font-size: 18px;
+    display: inline-block;
   }
 }
 
@@ -31,19 +28,19 @@ ul#searchTextResults.cards{
   margin-top: 50px;
 }
 .selected{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  
+  position: relative;
   button{
     background: none;
     border: none;
     position: absolute;
-    left:81px;
+    right: -18px;
+    top: -13px;    
     padding: 7px 10px;
+    z-index: 2;
     color: black;
     font-size: 20px;
   }
+  
   li{
     list-style: none;
   }
@@ -64,4 +61,9 @@ ul#searchTextResults.cards{
 .title{
   padding-top: 20px;
   text-align: center;
+}
+ul.selected-ing {
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+ display: grid;
 }

@@ -3,7 +3,7 @@
     <img src="{{recipes.picture}}" alt="">
     <h1>{{recipes.title}}</h1>
   </div>
-  <div class="ingredients">
+  <div class="ingredients shuffle">
     <a class="link" (click)="handleIngredientsClick()" [ngClass]="{'active': isIngredients}" tabindex="0">Ingredients</a>
     <p>|</p>
     <a class="link" (click)="handleStepsClick()" [ngClass]="{'active': isSteps}" tabindex="0">Steps</a>

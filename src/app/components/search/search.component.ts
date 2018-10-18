@@ -48,19 +48,16 @@ export class SearchComponent implements OnInit {
         this.dairy = results.filter((ingredient) => ingredient.category === 'dairy')
         this.legumes = results.filter((ingredient) => ingredient.category === 'legumes')
         this.meat = results.filter((ingredient) => ingredient.category === 'meat')
-        console.log(this.fruits)
       })
     .catch ((error) => {
     })
   }
 
   updateIng() {
-    console.log(this.allIngredients)
     // this.terms = 'terms';
     this.filteredIng = this.allIngredients.filter(ingredient => {
       return ingredient.name === this.terms
     })
-    console.log(this.filteredIng)
   }
   removeFromSelection() {
     this.selectedIng.splice(this.selectedIng.indexOf(this.selectedIng))
@@ -69,7 +66,6 @@ export class SearchComponent implements OnInit {
 
   addToSelection(ingredient) {
     this.selectedIng.push(ingredient)
-    console.log(this.selectedIng)
     this.filteredIng = [];
     this.updateRecipes();
     this.terms = null;
