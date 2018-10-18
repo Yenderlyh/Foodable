@@ -72,7 +72,7 @@ export class SearchComponent implements OnInit {
     console.log(this.selectedIng)
     this.filteredIng = [];
     this.updateRecipes();
-    this.searchValue = null;
+    this.terms = null;
   }
 
   updateRecipes() {

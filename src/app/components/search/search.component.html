@@ -1,7 +1,7 @@
 <div id="search">
   <form #form="ngForm">
     <div class="search-field">
-      <input class="search-bar" [(ngModel)]="terms" (ngModelChange)="updateIng()" [value]="searchValue" type="text"
+      <input autocomplete="false" class="search-bar" [(ngModel)]="terms" (ngModelChange)="updateIng()" [value]="searchValue" type="text"
         name="searchBox" id="search" placeholder="What's in your fridge?">
       <i class="fas fa-search"></i>
     </div>
