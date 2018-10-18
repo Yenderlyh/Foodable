@@ -17,9 +17,18 @@ export class SearchComponent implements OnInit {
   filteredIng: Array<any>;
   selectedIng = [];
   allIngredients = [];
-  recipes:any;
+  recipes: any;
   matchingRecipes: [];
   allRecipes = []
+  searchValue: String = ''
+  clicked = false;
+  vegetables: Array<any>;
+  fruits: Array<any>;
+  grains: Array<any>;
+  condiments: Array<any>;
+  dairy: Array<any>;
+  legumes: Array<any>;
+  meat: Array<any>;
 
 
   constructor(
@@ -29,13 +38,20 @@ export class SearchComponent implements OnInit {
 
 
   ngOnInit() {
-// this.queryField.valueChanges
-  this.ingredientsService.getAll()
-    .then((results) => {
-      this.allIngredients = results
+    // this.queryField.valueChanges
+    this.ingredientsService.getAll()
+      .then((results) => {
+        this.allIngredients = results
+        this.vegetables = results.filter((ingredient) => ingredient.category === 'vegetables')
+        this.fruits = results.filter((ingredient) => ingredient.category === 'fruits')
+        this.grains = results.filter((ingredient) => ingredient.category === 'grains')
+        this.dairy = results.filter((ingredient) => ingredient.category === 'dairy')
+        this.legumes = results.filter((ingredient) => ingredient.category === 'legumes')
+        this.meat = results.filter((ingredient) => ingredient.category === 'meat')
+        console.log(this.fruits)
+      })
+    .catch ((error) => {
     })
-    .catch((error) => {
-    })  
   }
 
   updateIng() {
@@ -46,15 +62,17 @@ export class SearchComponent implements OnInit {
     })
     console.log(this.filteredIng)
   }
-  removeFromSelection(){
+  removeFromSelection() {
     this.selectedIng.splice(this.selectedIng.indexOf(this.selectedIng))
     this.updateRecipes()
   }
 
-  addToSelection(ingredient){
+  addToSelection(ingredient) {
     this.selectedIng.push(ingredient)
     console.log(this.selectedIng)
+    this.filteredIng = [];
     this.updateRecipes();
+    this.searchValue = null;
   }
 
   updateRecipes() {
@@ -64,5 +82,6 @@ export class SearchComponent implements OnInit {
       });
   }
 
- 
+
+
 }

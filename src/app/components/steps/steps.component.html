@@ -1,5 +1,7 @@
-<section class="steps" *ngIf="recipes">
-    <p  *ngFor="let step of recipes.preparation, let i = index"><span class="step-index">{{i + 1}}</span> <span class="step"> {{step}} </span></p>
+<section *ngIf="recipes">
+    <div  class="steps" *ngFor="let step of recipes.preparation, let i = index">
+        <span class="step-index">{{i + 1}}</span><p><span class="step"> {{step}} </span></p>
+    </div>
 </section>
 
 

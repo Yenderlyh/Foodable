@@ -2,7 +2,8 @@
     crossorigin="anonymous">
 <body>
   <header id="site-header">
-    <a *ngIf= "user" [routerLink]="['/']"><h2>Foodable</h2></a>
+    <a *ngIf= "user" [routerLink]="['/']"><img src="https://image.ibb.co/mBFWo0/logo-xs.jpg" alt=""></a>
+    <a class="logout"*ngIf= "user" class="btn" (click)="logout()"><i class="fas fa-door-open"></i></a>
     <div *ngIf="user">
       <span><app-menu></app-menu></span>
     </div>

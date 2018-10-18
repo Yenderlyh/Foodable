@@ -1,1 +1,13 @@
-<p *ngIf="recipes">{{recipes.ingredients}}</p>
+<section *ngIf="recipes">
+  <!-- <p *ngIf="recipes">{{recipes.ingredients}}</p> -->
+    <div class="container time">
+      <p>preparation time:</p> {{recipes.cookingTime}} <span>minutes</span>
+    </div>
+  <div class="container ingredients-list" *ngFor="let ingredient of recipes.ingredients, let i = index">
+    <ul>
+      <li>
+        <p>{{ingredient}}</p>
+      </li>
+    </ul>
+  </div>
+</section>
