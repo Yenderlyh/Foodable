@@ -42,12 +42,6 @@ export class SearchComponent implements OnInit {
     this.ingredientsService.getAll()
       .then((results) => {
         this.allIngredients = results
-        this.vegetables = results.filter((ingredient) => ingredient.category === 'vegetables')
-        this.fruits = results.filter((ingredient) => ingredient.category === 'fruits')
-        this.grains = results.filter((ingredient) => ingredient.category === 'grains')
-        this.dairy = results.filter((ingredient) => ingredient.category === 'dairy')
-        this.legumes = results.filter((ingredient) => ingredient.category === 'legumes')
-        this.meat = results.filter((ingredient) => ingredient.category === 'meat')
       })
     .catch ((error) => {
     })
