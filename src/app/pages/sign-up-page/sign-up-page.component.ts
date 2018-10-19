@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
-  styleUrls: ['./sign-up-page.component.scss']
 })
 export class SignUpPageComponent implements OnInit {
   feedbackEnabled = false;
@@ -32,7 +31,7 @@ export class SignUpPageComponent implements OnInit {
           this.router.navigate(['/']);
         })
         .catch((err) => {
-          this.error = err.error.code; // :-)
+          this.error = err.error.code; 
           this.processing = false;
           this.feedbackEnabled = false;
         });
